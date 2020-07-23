@@ -21,7 +21,7 @@ def main():
         terceira = float(terceira.replace(",","."))
         quarta = float(quarta.replace(",","."))
 
-        media = (primeira + segunda + terceira + quarta) / 2
+        media = (primeira + segunda + terceira + quarta) / 4
         if media >= 7:
             resultado = 'Aprovado'
         elif media >= 4:
