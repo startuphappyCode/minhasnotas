@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, request, render_template # Importa a biblioteca
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
 
 
-app = Flask(__name__) # Inicializa a aplicação
-
-@app.route('/',  methods=['GET', 'POST']) # Nova rota
+@app.route('/', methods=['GET', 'POST'])  # Nova rota
 def main():
     resultado = None
     media = None
@@ -14,12 +14,11 @@ def main():
     terceira = request.args.get('terceira')
     quarta = request.args.get('quarta')
 
-    if primeira and segunda:
+    if primeira and segunda and terceira and quarta:
         primeira = float(primeira)
         segunda = float(segunda)
         terceira = float(terceira)
         quarta = float(quarta)
-
 
         media = (primeira + segunda + terceira + quarta) / 2
         if media >= 7:
@@ -30,11 +29,23 @@ def main():
             resultado = 'Reprovado'
 
     return render_template('index.html', media=media,
-                                         resultado=resultado)
+                           resultado=resultado)
+
 
 @app.route('/home')
 def home():
     return render_template('home.html')
 
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    return render_template('index.html')
+
+
 if __name__ == '__main__':
-   app.run(debug=True)
+    app.run(debug=True)
