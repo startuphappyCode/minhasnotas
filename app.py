@@ -14,11 +14,12 @@ def main():
     terceira = request.args.get('terceira')
     quarta = request.args.get('quarta')
 
+
     if primeira and segunda and terceira and quarta:
-        primeira = float(primeira)
-        segunda = float(segunda)
-        terceira = float(terceira)
-        quarta = float(quarta)
+        primeira = float(primeira.replace(",","."))
+        segunda = float(segunda.replace(",","."))
+        terceira = float(terceira.replace(",","."))
+        quarta = float(quarta.replace(",","."))
 
         media = (primeira + segunda + terceira + quarta) / 2
         if media >= 7:
