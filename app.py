@@ -22,7 +22,7 @@ def main():
         quarta = float(quarta.replace(",","."))
 
         media = (primeira + segunda + terceira + quarta) / 4
-        if media >= 7:
+        if media >= 6:
             resultado = 'Aprovado'
         elif media >= 4:
             resultado = 'Recuperação'
