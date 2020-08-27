@@ -1,56 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Aplicação Minhas Notas</title>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
- <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-   <a class="navbar-brand" href="/">
-    <img src="{{url_for('static', filename='minhasnotas.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="Minhas Notas">
-    Minhas Notas
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav justify-content-center">
-      <li class="nav-item active">
-        <a class="nav-link" href="/home">Home <span class="sr-only">(Página atual)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">contato</a>
-    </ul>
-  </div>
-</nav>
-     <div class="jumbotron">
-  <h1 class="display-4">Em Breve Dicas para Estudos</h1>
-  <p class="lead">O segredo para aprender e ir bem nas provas (de qualquer tipo) não é estudar mais, é estudar melhor e a eficiência é chave para não desacelerar o aprendizado.</p>
-  <hr class="my-4">
-  <p>Estudar é mais uma das atividades em que focar na eficiência é mais benéfico do que na quantidade.
-      Inclusive, segundo a ciência, estudar muito – prática chamada pelos especialistas de “overlearning” – prejudica o aprendizado.</p>
+{% extends 'layout.html' %}
 
-</div>
+{% block title %}Home{% endblock %}
 
-
-
-
-
-<div class="card text-center">
-                    <div class="card-header">
-                    <div class="card-body">
-                      <h5 class="card-title">Projeto OpenSource em Python</h5>
-                      <p class="card-text">Aplicação Minhas Notas foi desenvolvido em Python e Flask. Código disponível no GitHub.</p>
-                      <a href="https://github.com/frontendDieferson/minhasnotas" target="_blank" class="btn btn-info" style="color:#fff;">Acessar Código Fonte</a>
-                    </div>
- <footer class="footer mt-auto">
-     <div class="container">
-         <span class="text-muted">Desenvolvido por TwoDevs Startup</span>
-     </div>
- </footer>
- </div>
-
-</body>
-</html>
+{% block content %}
+<h2>Home Page</h2>
+<p>Welcome back, {{ username }}!</p>
+{% endblock %}
