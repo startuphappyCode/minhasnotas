@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Aplicação - MinhasNotas</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script data-ad-client="ca-pub-7850463277662225" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" href="/">
+    <img src="{{url_for('static', filename='minhasnotas.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="Minhas Notas">
+    Minhas Notas
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button> 
+  <!--<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav justify-content-end">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Área dos Professores <span class="sr-only">(Página atual)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">contato</a>
+    </ul>
+  </div> -->
+</nav>
+
+            <div class="align-self-center">
+                <div class="row justify-content-center">
+                    <img src="{{url_for('static', filename='minhasnotas.svg')}}" width="150" height="150" class="d-inline-block align-top" alt="MinhasNotas" />
+                    
+                </div>
+                   <center><div class="jumbotron jumbotron-fluid-center mt-4">
+
+                       <h1 class="display-4 align-self-center">Minhas Notas</h1></div></center>
+                <div class="row justify-content-center">
+                    <p class="align-self-center">Insira suas notas semestrais</p></div>
+                        <form method="get">
+                            <div class="form-row">
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" name="primeira" placeholder="Primeira Nota">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" name="segunda" placeholder="Segunda Nota">
+                                    </div>
+                                <div class="col-md-6">
+                                        <input class="form-control" type="text" name="terceira" placeholder="Terceira Nota">
+                                    </div>
+                                <div class="col-md-6">
+                                        <input class="form-control" type="text" name="quarta" placeholder="Quarta Nota">
+                                    </div>
+                            </div>
+
+                            <div class="form-row justify-content-center mt-4">
+                                <input class="btn btn-primary" type="submit" value="Calcular Nota">
+                            </div>
+                        </form>
+                    </div>
+
+                    {% if resultado %}
+                    <hr class="mt-4">
+                    <div class="row justify-content-center">
+                        <h3>{{resultado}} com média {{media}}!!!</h2>
+                    </div>   
+                    {% endif %}
+    
+                    </div>
+                </div>
+               
+                        <footer class="footer mt-auto">
+            <div class="container">
+              <span class="text-muted">Desenvolvido por Dieferson Soares</span>
+            </div>
+          </footer>
+      
+              </div>
+            </div>
+        </body>
+    </html>
